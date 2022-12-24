@@ -1,6 +1,15 @@
-import mongoose from 'mongoose';
+import mongoose, { Document, Model, mongo, Schema } from 'mongoose';
 
-const urlSchema = new mongoose.Schema({
+interface urlInterface extends Document {
+  url: string;
+  redirectTo: string;
+}
+
+interface urlModel extends Model<urlInterface> {
+  save(url: string): string;
+}
+
+const urlSchema: Schema<urlInterface> = new mongoose.Schema({
   redirectTo: {
     type: String,
     required: true,
@@ -14,4 +23,7 @@ const urlSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model("url", urlSchema);
+export const UrlModel = mongoose.model<urlInterface, urlModel>(
+  'url',
+  urlSchema
+);

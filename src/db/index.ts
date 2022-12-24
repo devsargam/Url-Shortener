@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import UrlModel from './urlModel';
+import { UrlModel } from './urlModel';
 import dotenv from 'dotenv';
 import { randomBytes } from 'crypto';
 
@@ -24,14 +24,12 @@ export async function findUrlsWithRedirect(redirect: String) {
   return await UrlModel.find({ redirectTo: redirect });
 }
 
-export async function createNewShorturlwithUrl(url: String) {
-  const redirectTo = randomBytes(5).toString('hex');
+export async function createNewShorturl(url: String, redirectTo: String) {
   const newUrl = await UrlModel.create({
     url,
     redirectTo,
   });
   await newUrl.save();
-  console.log(newUrl);
   return newUrl;
 }
 
