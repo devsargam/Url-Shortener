@@ -15,10 +15,9 @@ interface Url {
 export async function getAllUrlsFromDb(): Promise<Url[]> {
   return await UrlModel.find({}, { _id: 0, __v: 0 });
 }
-getAllUrlsFromDb().then(arr => console.log(arr))
 
 export async function findUrlsWithUrl(url: String) {
-  return await UrlModel.find({ url });
+  return await UrlModel.find({ url }, { _id: 0, __v: 0 });
 }
 
 export async function findUrlsWithRedirect(redirect: String) {
@@ -32,6 +31,8 @@ export async function createNewShorturlwithUrl(url: String) {
     redirectTo,
   });
   await newUrl.save();
+  console.log(newUrl);
+  return newUrl;
 }
 
 export async function deleteUrlWithRedirect(redirectTo: String) {
