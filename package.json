@@ -10,7 +10,7 @@
   "scripts": {
     "build":  "tsc --outDir dist",
     "start": "node dist/app.js",
-    "dev": "ts-node-dev src/app.ts"
+    "dev": "ts-node-dev src/index.ts"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
