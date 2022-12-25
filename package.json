@@ -8,12 +8,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build":  "tsc --outDir dist",
+    "build": "tsc --outDir dist",
     "start": "node dist/app.js",
     "dev": "ts-node-dev src/index.ts"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "mongoose": "^6.7.4"
   },
