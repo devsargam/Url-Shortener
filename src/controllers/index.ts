@@ -9,7 +9,7 @@ import {
 } from '../db';
 import { checkIfUrlIsValid } from '../utils';
 
-export async function getAllUrls(req: Request, res: Response) {
+export async function getAllUrls(_: Request, res: Response) {
   const allUrls = await getAllUrlsFromDb();
   res.send(allUrls);
 }
@@ -24,7 +24,7 @@ export async function shortenUrl(req: Request, res: Response) {
     return res.json(urlInDb[0]);
   }
   const redirectTo = randomBytes(5).toString('hex');
-  const urlFromDb = await createNewShorturl(url, redirectTo);
+  await createNewShorturl(url, redirectTo);
   res.json({
     url,
     redirectTo,
