@@ -9,6 +9,10 @@ import {
 } from '../db';
 import { checkIfUrlIsValid } from '../utils';
 
+export function renderIndex(_: Request, res: Response) {
+  res.render('pages/index');
+}
+
 export async function getAllUrls(_: Request, res: Response) {
   const allUrls = await getAllUrlsFromDb();
   res.send(allUrls);
@@ -16,6 +20,7 @@ export async function getAllUrls(_: Request, res: Response) {
 
 export async function shortenUrl(req: Request, res: Response) {
   const url = req.body.url;
+  console.log(url);
   if (!checkIfUrlIsValid(req.body.url)) {
     return res.send('Invalid Url').status(300);
   }

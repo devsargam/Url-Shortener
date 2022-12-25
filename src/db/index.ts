@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 import { randomBytes } from 'crypto';
 
 dotenv.config();
-console.log(process.env.MONGO_URL);
 mongoose.connect(process.env.MONGO_URL ?? '');
 
 interface Url {

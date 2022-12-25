@@ -1,0 +1,15 @@
+<h1>Existing shorten urls in server</h1>
+
+<ul class="list-group" id="urls"></ul>
+<script defer>
+  const ul = document.getElementById('urls');
+  function populateList(dataArray) {
+    for (const data of dataArray) {
+      ul.innerHTML += `<a href=${data.redirectTo}>${data.redirectTo}</span>`;
+    }
+  }
+  let dataArr;
+  fetch('/api/get-urls')
+    .then((res) => res.json())
+    .then((data) => populateList(data));
+</script>

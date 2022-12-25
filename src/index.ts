@@ -3,14 +3,18 @@ import {
   deleteUrl,
   getAllUrls,
   redirectToFull,
+  renderIndex,
   shortenUrl,
 } from './controllers/';
 
 const app = express();
 app.use(express.json());
+app.set('view engine', 'ejs');
+app.set('views', './src/views');
 const PORT = process.env.PORT ?? 3000;
 const API_URL = process.env.API_URL ?? '';
 
+app.get(`/`, renderIndex);
 app.get(`${API_URL}/get-urls`, getAllUrls);
 app.post(`${API_URL}/short-url`, shortenUrl);
 app.delete(`${API_URL}/delete/:redirectUrl`, deleteUrl);

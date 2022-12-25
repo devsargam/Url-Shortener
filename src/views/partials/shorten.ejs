@@ -1,0 +1,33 @@
+<section>
+  <form class="form-inline" id="shorten-form">
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="link" class="sr-only">Link</label>
+      <input type="url" class="form-control" id="link" placeholder="Link" />
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  </form>
+  <span>Your shorten url is </span>
+  <a id="redirect" href=""></a>
+</section>
+<script defer>
+  const ancher = document.getElementById('redirect');
+  document
+    .getElementById('shorten-form')
+    .addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const urlInputValue = document.getElementById('link').value;
+      const options = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: urlInputValue }),
+      };
+      try {
+        const res = await fetch('/api/short-url', options);
+        const data = await res.json();
+        ancher.innerText = location.href + data.redirectTo;
+        ancher.setAttribute('href', data.redirectTo);
+      } catch (e) {
+        console.error(e);
+      }
+    });
+</script>
