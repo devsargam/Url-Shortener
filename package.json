@@ -2,15 +2,15 @@
   "name": "url-shortner",
   "version": "1.0.0",
   "description": "A url shortner web application",
-  "main": "src/index.js",
+  "main": "src/server.ts",
   "repository": "git@github.com:devsargam/url-shortner.git",
   "author": "devsargam <sargampoudel100@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
     "build":  "tsc --outDir dist",
-    "start": "node dist/app.js",
-    "dev": "ts-node-dev src/index.ts"
+    "start": "node dist/server.js",
+    "dev": "ts-node-dev src/server.ts"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
