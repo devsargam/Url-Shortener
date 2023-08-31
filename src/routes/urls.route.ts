@@ -1,9 +1,5 @@
 import { Router } from 'express';
-import {
-  deleteUrl,
-  getAllUrls,
-  shortenUrl,
-} from '../controllers/urls.controller';
+import { deleteUrl, getAllUrls, shortenUrl } from '../controllers';
 
 export const router = Router();
 
