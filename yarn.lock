@@ -782,6 +782,13 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@mongodb-js/saslprep@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@mongodb-js/saslprep/-/saslprep-1.1.0.tgz#022fa36620a7287d17acd05c4aae1e5f390d250d"
+  integrity sha512-Xfijy7HvfzzqiOAhAepF4SGN5e9leLkMvg/OPOF97XemjfVCYN/oWa75wnkc6mltMSTwY+XlbhWgUOJmkFspSw==
+  dependencies:
+    sparse-bitfield "^3.0.3"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"
@@ -1054,6 +1061,13 @@ bson@^4.7.0:
   version "4.7.0"
   resolved "https://registry.npmjs.org/bson/-/bson-4.7.0.tgz"
   integrity sha512-VrlEE4vuiO1WTpfof4VmaVolCVYkYTgB9iWgYNOrVlnifpME/06fhFRmONgBhClD5pFC1t9ZWqFUQEQAzY43bA==
+  dependencies:
+    buffer "^5.6.0"
+
+bson@^4.7.2:
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-4.7.2.tgz#320f4ad0eaf5312dd9b45dc369cc48945e2a5f2e"
+  integrity sha512-Ry9wCtIZ5kGqkJoi6aD8KjxFZEx78guTQDnpXWiNthsxzrxAK/i8E6pCHAIZTbaEFWcOCvbecMukfK7XUvyLpQ==
   dependencies:
     buffer "^5.6.0"
 
@@ -1406,6 +1420,13 @@ fast-xml-parser@4.0.11:
   version "4.0.11"
   resolved "https://registry.npmjs.org/fast-xml-parser/-/fast-xml-parser-4.0.11.tgz"
   integrity sha512-4aUg3aNRR/WjQAcpceODG1C3x3lFANXRo8+1biqfieHmg9pyMt7qB4lQV/Ta6sJCTbA5vfD8fnA8S54JATiFUA==
+  dependencies:
+    strnum "^1.0.5"
+
+fast-xml-parser@^4.2.4:
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.2.7.tgz#871f2ca299dc4334b29f8da3658c164e68395167"
+  integrity sha512-J8r6BriSLO1uj2miOk1NW0YVm8AGOOu3Si2HQp/cSmo6EA4m3fcwu2WKjJ4RK9wMLBtg69y1kS8baDiQBR41Ig==
   dependencies:
     strnum "^1.0.5"
 
@@ -1764,7 +1785,7 @@ mkdirp@^1.0.4:
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-mongodb-connection-string-url@^2.5.4:
+mongodb-connection-string-url@^2.5.4, mongodb-connection-string-url@^2.6.0:
   version "2.6.0"
   resolved "https://registry.npmjs.org/mongodb-connection-string-url/-/mongodb-connection-string-url-2.6.0.tgz"
   integrity sha512-WvTZlI9ab0QYtTYnuMLgobULWhokRjtC7db9LtcVfJ+Hsnyr5eo6ZtNAt3Ly24XZScGMelOcGtm7lSn0332tPQ==
@@ -1784,6 +1805,18 @@ mongodb@4.11.0:
   optionalDependencies:
     "@aws-sdk/credential-providers" "^3.186.0"
     saslprep "^1.0.3"
+
+mongodb@^4.17.0:
+  version "4.17.1"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-4.17.1.tgz#ccff6ddbda106d5e06c25b0e4df454fd36c5f819"
+  integrity sha512-MBuyYiPUPRTqfH2dV0ya4dcr2E5N52ocBuZ8Sgg/M030nGF78v855B3Z27mZJnp8PxjnUquEnAtjOsphgMZOlQ==
+  dependencies:
+    bson "^4.7.2"
+    mongodb-connection-string-url "^2.6.0"
+    socks "^2.7.1"
+  optionalDependencies:
+    "@aws-sdk/credential-providers" "^3.186.0"
+    "@mongodb-js/saslprep" "^1.1.0"
 
 mongoose@*, mongoose@^6.7.4:
   version "6.7.4"
